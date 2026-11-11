@@ -1,0 +1,8 @@
+{
+  "client_id": "WPIYM2SFCIQIUATLDUFP5BJJB1LOG5PCRI3Y1T1NKHYSJWY5",
+  "client_name": "SwarmAI",
+  "redirect_uris": ["io.leege.swarmai:/oauth"],
+  "grant_types": ["authorization_code", "refresh_token"],
+  "response_types": ["code"],
+  "token_endpoint_auth_method": "none"
+}
