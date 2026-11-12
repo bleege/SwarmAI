@@ -42,7 +42,7 @@ enum SwarmError: LocalizedError {
 /// Calls tools on Foursquare's Swarm MCP server over MCP's Streamable HTTP transport (JSON-RPC over HTTPS).
 @Observable
 final class SwarmClient {
-    static let endpoint = URL(string: "https://api.foursquare.com/v2/streaming/mcp/swarm-beta")!
+    static let endpoint = URL(string: "https://api.foursquare.com/v2/streaming/mcp/swarm-beta?v=20261027")!   // v pins the API version, per Foursquare's setup instructions
     /// Tool results leave out coordinates by default; every call asks for them through the tool's `filter`.
     static let venueFields = "{id, name, location: {address, city, lat, lng}}"
 
