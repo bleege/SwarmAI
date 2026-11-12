@@ -1,8 +1,0 @@
-{
-  "client_id": "https://www.leege.io/SwarmAI/oauth/https-test.json",
-  "client_name": "SwarmAI",
-  "redirect_uris": ["https://www.leege.io/SwarmAI/oauth"],
-  "grant_types": ["authorization_code", "refresh_token"],
-  "response_types": ["code"],
-  "token_endpoint_auth_method": "none"
-}
