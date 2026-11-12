@@ -7,13 +7,11 @@ import SwiftUI
 /// Signs in to Foursquare with OAuth 2.1 (authorization code + PKCE, no client secret) and keeps the tokens in the Keychain.
 @Observable
 final class SwarmAuth {
-    /// Foursquare has no dynamic client registration. Its OAuth server accepts a client ID that is the HTTPS URL of a
-    /// client metadata document you host. Replace this placeholder with that URL before signing in. The document:
-    /// {"client_id": "<this URL>", "client_name": "SwarmAI", "redirect_uris": ["swarmai://oauth"],
-    ///  "grant_types": ["authorization_code", "refresh_token"], "response_types": ["code"], "token_endpoint_auth_method": "none"}
-    static let clientID = "https://YOUR-DOMAIN/swarmai/oauth-client.json"
-    static let callbackScheme = "swarmai"
-    static let redirectURI = "\(callbackScheme)://oauth"
+    /// Foursquare has no dynamic client registration; it accepts a client ID that is the URL of a client metadata document.
+    /// That document is `oauth/oauth-client.json` (GitHub Pages); its `client_id` must equal this URL exactly.
+    static let clientID = "https://www.leege.io/SwarmAI/oauth/oauth-client.json"
+    static let callbackScheme = "io.leege.swarmai"
+    static let redirectURI = "\(callbackScheme):/oauth"   // must match the document's redirect_uris
     /// Read-only scopes: the app never writes to the user's Swarm account.
     static let scopes = "mcp:connect venues:read checkins:read lists:read friends:read events:read location:read offline_access"
     /// The OAuth server, which is also the protected resource the tokens are for.
